@@ -76,6 +76,8 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
 import axios from 'axios';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import About from './pages/About'; // Import your About page component
 
 function App() {
   const [message, setMessage] = useState('');
@@ -94,8 +96,10 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Welcome to My Universe</h1>
+        <h1>Welcome to parth Universe</h1>
         <p>{message}</p>
+        <Link to="/about">About</Link>
+        <Route path="/about" component={About} />
       </header>
     </div>
   );
