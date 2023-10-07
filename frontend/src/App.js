@@ -76,7 +76,7 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
 import axios from 'axios';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom'; // Import Routes
 import About from './pages/About'; // Import your About page component
 
 function App() {
@@ -94,18 +94,24 @@ function App() {
   }, []); // Empty dependency array to run the effect once on component mount
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>Welcome to parth Universe</h1>
-        <p>{message}</p>
-        <Link to="/about">About</Link>
-        <Route path="/about" component={About} />
-      </header>
-    </div>
+    // <Router>
+      <div className="App">
+        <header className="App-header">
+          <h1>Welcome to Parth Universe</h1>
+          <p>{message}</p>
+          {/* <Link to="/about">About</Link>
+    
+          <Routes> Wrap Routes around Route components
+            <Route path="/about" element={<About />} />
+          </Routes> */}
+        </header>
+      </div>
+    // </Router>
   );
 }
 
 export default App;
+
 
 
 // import React, { useEffect, useState } from 'react';
