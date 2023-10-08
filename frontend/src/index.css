@@ -11,3 +11,64 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.main {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(
+    to bottom,
+    #0a0a2a,
+    #000000 50%,
+    #04091e
+  );
+  overflow: hidden; /* Hide stars that are outside the container */
+}
+
+/* Create star-like elements */
+.star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background-color: #fff;
+  border-radius: 50%;
+  animation: twinkle 2s infinite; /* Add a twinkle animation */
+}
+
+/* Keyframes for twinkle animation */
+@keyframes twinkle {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0;
+    transform: scale(1.2);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.planet {
+  width: 100px;
+  height: 100px;
+  background-color: #f3f3f3; /* Set the color of your planet */
+  border-radius: 50%; /* Make it round */
+  position: absolute;
+  top: 30%; /* Adjust the position */
+  left: 70%; /* Adjust the position */
+  opacity: 0.7; /* Adjust the opacity */
+}
+
+h1{
+  color: #fff;
+}
+
+p{
+  color: #fff;
+}

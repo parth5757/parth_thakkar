@@ -1,49 +1,23 @@
 // // import React, { useEffect, useState } from 'react';
-// // import './App.css';
-// // import axios from 'axios';
-
-// // function App() {
-// //   const [message, setMessage] = useState('');
-
-// //   useEffect(() => {
-// //     // Make an API request to the Django backend
-// //     axios.get('/api/hello/')
-// //       .then(response => {
-// //         setMessage(response.data.message);
-// //       })
-// //       .catch(error => {
-// //         console.error('Error fetching data:', error);
-// //       });
-// //   }, []); // Empty dependency array to run the effect once on component mount
-
-// //   return (
-// //     <div className="App">
-// //       <header className="App-header">
-// //         <h1>Welcome to My Universe</h1>
-// //         <p>{message}</p>
-// //       </header>
-// //     </div>
-// //   );
-// // }
-
-// // export default App;
-
-// import React, { useEffect, useState } from 'react';
 // import './App.css';
-// import axios from 'axios';
+// // import axios from 'axios';
+// // import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom'; // Import Routes
+// // import About from './pages/About'; // Import your About page component
 
 // function App() {
-//   const [message, setMessage] = useState('');
 
-//   useEffect(() => {
-//     // Define your headers here
-//     const headers = {
-//       'Authorization': 'Bearer your_access_token',
-//       'Content-Type': 'application/json', // Adjust as needed
-//     };
+//   return (
+//     <div className="main">
+//       <h1>Under Maintenance</h1>
+//       <p>We are currently performing maintenance. Please check back later.</p>
+//     </div>
+//   );
 
-//     // Make an API request to the Django backend with headers
-//   //   axios.get('/api/hello/', { headers })
+//   // const [message, setMessage] = useState('');
+
+//   // useEffect(() => {
+//   //   // Make an API request to the Django backend
+//   //   axios.get('http://localhost:8000/api/hello/')
 //   //     .then(response => {
 //   //       setMessage(response.data.message);
 //   //     })
@@ -52,65 +26,24 @@
 //   //     });
 //   // }, []); // Empty dependency array to run the effect once on component mount
 
-//     axios.get('/api/hello/')
-//     .then(response => {
-//       console.log('Response data:', response.data); // Log the response data
-//       setMessage(response.data.message);
-//     })
-//     .catch(error => {
-//       console.error('Error fetching data:', error);
-//     });
-
-//   return (
-//     <div className="App">
-//       <header className="App-header">
-//         <h1>Welcome to My Universe</h1>
-//         <p>{message}</p>
-//       </header>
-//     </div>
-//   );
+//   // return (
+//   //   // <Router>
+//   //     <div className="App">
+//   //       <header className="App-header">
+//   //         <h1>Welcome to Parth Universe</h1>
+//   //         <p>{message}</p>
+//   //         {/* <Link to="/about">About</Link>
+    
+//   //         <Routes> Wrap Routes around Route components
+//   //           <Route path="/about" element={<About />} />
+//   //         </Routes> */}
+//   //       </header>
+//   //     </div>
+//   //   // </Router>
+//   // );
 // }
 
 // export default App;
-
-import React, { useEffect, useState } from 'react';
-import './App.css';
-import axios from 'axios';
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom'; // Import Routes
-import About from './pages/About'; // Import your About page component
-
-function App() {
-  const [message, setMessage] = useState('');
-
-  useEffect(() => {
-    // Make an API request to the Django backend
-    axios.get('http://localhost:8000/api/hello/')
-      .then(response => {
-        setMessage(response.data.message);
-      })
-      .catch(error => {
-        console.error('Error fetching data:', error);
-      });
-  }, []); // Empty dependency array to run the effect once on component mount
-
-  return (
-    // <Router>
-      <div className="App">
-        <header className="App-header">
-          <h1>Welcome to Parth Universe</h1>
-          <p>{message}</p>
-          {/* <Link to="/about">About</Link>
-    
-          <Routes> Wrap Routes around Route components
-            <Route path="/about" element={<About />} />
-          </Routes> */}
-        </header>
-      </div>
-    // </Router>
-  );
-}
-
-export default App;
 
 
 
@@ -165,3 +98,54 @@ export default App;
 // }
 
 // export default App;
+
+
+
+import React, { useEffect } from 'react';
+import './App.css';
+
+function App() {
+  useEffect(() => {
+    // JavaScript code for creating stars
+    const container = document.querySelector('.main');
+
+    function createStar() {
+      const star = document.createElement('div');
+      star.classList.add('star');
+
+      const size = Math.random() * 2 + 1;
+      star.style.width = `${size}px`;
+      star.style.height = `${size}px`;
+
+      const x = Math.random() * 100;
+      const y = Math.random() * 100;
+      star.style.left = `${x}%`;
+      star.style.top = `${y}%`;
+
+      container.appendChild(star);
+
+      setTimeout(() => {
+        star.remove();
+        createStar();
+      }, Math.random() * 2000);
+    }
+
+    for (let i = 0; i < 100; i++) {
+      createStar();
+    }
+
+    // Create a planet
+    const planet = document.createElement('div');
+    planet.classList.add('planet');
+    container.appendChild(planet);
+  }, []); // Empty dependency array to run the effect once on component mount
+
+  return (
+    <div className="main">
+      <h1>Under Maintenance</h1>
+      <p>We are currently performing maintenance. Please check back later.</p>
+    </div>
+  );
+}
+
+export default App;   
