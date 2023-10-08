@@ -54,15 +54,48 @@ code {
   }
 }
 
-.planet {
-  width: 100px;
-  height: 100px;
-  background-color: #f3f3f3; /* Set the color of your planet */
-  border-radius: 50%; /* Make it round */
+/* Styles for the sun */
+.sun {
+  background-color: #FFD700; /* Yellow color for the sun */
+  border-radius: 50%; /* Make it a circle */
   position: absolute;
-  top: 30%; /* Adjust the position */
-  left: 70%; /* Adjust the position */
-  opacity: 0.7; /* Adjust the opacity */
+  width: 100px; /* Adjust the size of the sun */
+  height: 100px;
+  top: 50%;
+  left: 50%;
+  margin-top: -50px; /* Center vertically */
+  margin-left: -50px; /* Center horizontally */
+  animation: spin 20s linear infinite; /* Add a rotation animation */
+}
+
+/* Styles for the planets */
+.planet {
+  background-color: #6495ED; /* Blue color for planets */
+  border-radius: 50%; /* Make them circles */
+  position: absolute;
+  width: 30px; /* Adjust the size of the planets */
+  height: 30px;
+  animation: orbit 10s linear infinite; /* Add an orbit animation */
+}
+
+/* Keyframes for the rotation animation */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Keyframes for the orbit animation */
+@keyframes orbit {
+  0% {
+    transform: translateX(0px) translateY(0px) rotate(0deg);
+  }
+  100% {
+    transform: translateX(-180px) translateY(0px) rotate(360deg);
+  }
 }
 
 h1{

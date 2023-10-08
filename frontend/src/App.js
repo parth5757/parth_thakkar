@@ -134,10 +134,35 @@ function App() {
       createStar();
     }
 
-    // Create a planet
-    const planet = document.createElement('div');
-    planet.classList.add('planet');
-    container.appendChild(planet);
+    // Create the Sun
+    const sun = document.createElement('div');
+    sun.classList.add('sun');
+    container.appendChild(sun);
+
+    // Create Planets
+    const planets = [
+      { name: 'Mercury', size: 10, distance: 40 },
+      { name: 'Venus', size: 20, distance: 70 },
+      { name: 'Earth', size: 20, distance: 100 },
+      { name: 'Mars', size: 15, distance: 150 },
+      { name: 'Jupiter', size: 40, distance: 220 },
+      { name: 'Saturn', size: 35, distance: 320 },
+      { name: 'Uranus', size: 25, distance: 430 },
+      { name: 'Neptune', size: 25, distance: 520 },
+    ];
+
+    planets.forEach((planet, index) => {
+      const planetElement = document.createElement('div');
+      planetElement.classList.add('planet');
+      planetElement.style.width = `${planet.size}px`;
+      planetElement.style.height = `${planet.size}px`;
+      const angle = (index / planets.length) * 2 * Math.PI;
+      const x = Math.cos(angle) * planet.distance + 50; // Centered at (50, 50)
+      const y = Math.sin(angle) * planet.distance + 50;
+      planetElement.style.left = `${x}%`;
+      planetElement.style.top = `${y}%`;
+      container.appendChild(planetElement);
+    });
   }, []); // Empty dependency array to run the effect once on component mount
 
   return (
@@ -148,4 +173,4 @@ function App() {
   );
 }
 
-export default App;   
+export default App;
