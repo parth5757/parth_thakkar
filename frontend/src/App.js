@@ -103,6 +103,7 @@
 
 import React, { useEffect } from 'react';
 import './App.css';
+import Sun from './components/Sun.js'
 
 function App() {
   useEffect(() => {
@@ -134,11 +135,6 @@ function App() {
       createStar();
     }
 
-    // Create the Sun
-    const sun = document.createElement('div');
-    sun.classList.add('sun');
-    container.appendChild(sun);
-
     // Create Planets
     const planets = [
       { name: 'Mercury', size: 10, distance: 40 },
@@ -169,6 +165,7 @@ function App() {
     <div className="main">
       <h1>Under Maintenance</h1>
       <p>We are currently performing maintenance. Please check back later.</p>
+      <Sun color="#FFD700" />
     </div>
   );
 }
