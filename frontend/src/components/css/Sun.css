@@ -1,0 +1,48 @@
+/* Sun Styles */
+
+.glow {
+  background: conic-gradient(
+    from 0deg,
+    rgba(255, 215, 0, 0.7) 0%,
+    rgba(255, 255, 255, 1) 40%, /* Change to white with full opacity */
+    rgba(255, 255, 255, 1) 60%, /* Change to white with full opacity */
+    rgba(255, 215, 0, 0.7) 100%
+  );
+  border-radius: 50%;
+  width: 400px;
+  height: 400px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+  .sun {
+    background-color: #FFD700; /* Bright yellow color for the sun */
+    border-radius: 50%;
+    width: 200px; /* Adjust the size of the sun */
+    height: 200px;
+    animation: spin 20s linear infinite;
+  }
+  
+
+  
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  @keyframes glow {
+    0% {
+      transform: scale(0.9);
+    }
+    100% {
+      transform: scale(1.2);
+    }
+  }
+  

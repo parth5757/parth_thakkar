@@ -1,0 +1,40 @@
+/* Solar System component styles */
+.scene {
+    height: 100%;
+    background: #10151a;
+    perspective: 350px;
+  }
+  
+  .system {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    font-size: 0.25em;
+    border-radius: 100%;
+  }
+  
+  .orbit {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid rgba(127, 255, 255, 0.1);
+    box-shadow: 0 0 75em rgba(cyan, 0.05);
+    border-radius: 100%;
+    transform-style: preserve-3d;
+  }
+  
+  /* Styles for the sun (customize this part) */
+  .sphere {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 3em;
+    height: 3em;
+    transform: translate(-50%, -50%);
+    background: #FDE528;
+    border-radius: 100%;
+    text-indent: -99999px;
+    animation: none !important;
+  }
+  
