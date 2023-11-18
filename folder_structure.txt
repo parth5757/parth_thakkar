@@ -1,32 +1,4 @@
-Selected folder: D:/python/black_coffer/frontend/src
-App.css
-App.js
-App.test.js
-[components]
-  [navbar]
-    navbar.jsx
-    navbar.scss
-  [sidebar]
-    sidebar.jsx
-    sidebar.scss
-index.css
-index.js
-logo.svg
-[pages]
-  [home]
-    home.jsx
-    home.scss
-  [list]
-    list.jsx
-    list.scss
-  [login]
-    login.jsx
-    login.scss
-  [New]
-    New.jsx
-    new.scss
-  [single]
-    single.jsx
-    single.scss
-reportWebVitals.js
-setupTests.js
+Selected folder: D:/HtML CSS & JAVASCRIPT/Rocket_Intro
+rocket.gltf
+Rocket_intro.html
+    

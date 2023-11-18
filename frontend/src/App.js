@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 // import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import axios from 'axios';
 import './App.css';
-import Sun from './components/Sun'
+// import Sun from './components/Sun'
 
 function App() {
   const [message, setMessage] = useState('');
@@ -57,7 +57,7 @@ function App() {
 
       {/* Add the Sun Component here */}
 
-      <Sun />
+      {/* <Sun /> */}
     </div>
   );
 }
