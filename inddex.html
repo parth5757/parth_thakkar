@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Parth Name</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+
+        #canvas {
+            width: 100%;
+            height: 100vh;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="canvas"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/110/three.min.js"></script>
+    <script>
+        const container = document.getElementById("canvas");
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(
+            75,
+            window.innerWidth / window.innerHeight,
+            0.1,
+            1000
+        );
+        const renderer = new THREE.WebGLRenderer({ antialias: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        container.appendChild(renderer.domElement);
+        let isRotating = true;
+
+        const loader = new THREE.FontLoader();
+
+        loader.load(
+            "https://threejs.org/examples/fonts/helvetiker_regular.typeface.json",
+            function (font) {
+                const geometry = new THREE.TextGeometry("Parth", {
+                    font: font,
+                    size: 4,
+                    height: 0.5,
+                    curveSegments: 12,
+                    bevelEnabled: true,
+                    bevelThickness: 0.3,
+                    bevelSize: 0.3,
+                    bevelOffset: 0,
+                    bevelSegments: 5,
+                });
+
+                const material = new THREE.MeshBasicMaterial({ color: 0x00ffff });
+                const textMesh = new THREE.Mesh(geometry, material);
+                textMesh.position.set(-8, -2, -10); // Adjust the position as needed
+                scene.add(textMesh);
+
+                container.addEventListener("mouseover", () => {
+                    textMesh.rotation.y = 0;  // Stop the rotation
+                    isRotating = false;
+                });
+
+                container.addEventListener("mouseout", () => {
+                    isRotating = true;  // Resume the rotation
+                });
+
+                function animate() {
+                    if (isRotating) {
+                        textMesh.rotation.y += 0.01;
+                    }
+
+                    renderer.render(scene, camera);
+                    requestAnimationFrame(animate);
+                }
+
+                animate();
+            }
+        );
+
+        camera.position.z = 10;
+    </script>
+</body>
+
+</html>
