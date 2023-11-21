@@ -53,3 +53,4 @@ you can install also an vs code extension
 -   Python
 -   Reactjs code snippets
 -   Prettier
+-   tailwind css IntelliSense   
