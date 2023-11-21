@@ -1,4 +1,0 @@
-Selected folder: D:/HtML CSS & JAVASCRIPT/Rocket_Intro
-rocket.gltf
-Rocket_intro.html
-    
