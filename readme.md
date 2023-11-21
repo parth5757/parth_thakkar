@@ -26,7 +26,9 @@ npm install -D tailwindcss postcss autoprefixer
 ``` bash
 npx tailwindcss init -p
 ```
-
+```` bash
+npm install react-router-dom
+```
 ``` bash
 
 npm run dev
