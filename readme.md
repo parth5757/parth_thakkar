@@ -15,7 +15,7 @@ three.js
 ``` bash
 npm create vite@latest ./
 ```
-   -  chooce react
+   - chooce react
 
 ``` bash
 npm install
@@ -26,11 +26,10 @@ npm install -D tailwindcss postcss autoprefixer
 ``` bash
 npx tailwindcss init -p
 ```
-```` bash
+``` bash
 npm install react-router-dom
 ```
 ``` bash
-
 npm run dev
 ```
 
