@@ -45,3 +45,11 @@ npm start
 
 you can install also an vs code extension
 -   ES7+
+-   Auto Rename Tag
+-   Black Box
+-   Denigma AI
+-   Django
+-   Live Server
+-   Python
+-   Reactjs code snippets
+-   Prettier
