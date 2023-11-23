@@ -33,6 +33,9 @@ npm install react-router-dom
 npm install @react-three/fiber
 ```
 ``` bash
+npm install @react-three/drei
+```   
+``` bash
 npm run dev
 ```
 
