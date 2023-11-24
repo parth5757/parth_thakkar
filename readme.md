@@ -11,7 +11,8 @@ pip install django-cors-headers
 ```
 
 three.js
-
+currently at here <a href="https://youtu.be/FkowOdMjvYo?si=k9chFvX96sUr44_x&t=2136">Continue from here</a>
+<a href="https://gltf.pmnd.rs/">glb file loader</a>
 ``` bash
 npm create vite@latest ./
 ```
