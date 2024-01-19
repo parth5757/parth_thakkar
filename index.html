@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Under Maintenance</title>
+  <style>
+    * {
+      overflow: hidden;
+    }
+
+    body {
+      text-align: center;
+      font-family: sans-serif;
+    }
+
+    .main {
+      background: linear-gradient(
+    to bottom,
+    #0a0a2a,
+    #000000 50%,
+    #04091e
+  );
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    h1, p {
+      color: white;
+    }
+
+    p {
+      margin: 10px 0;
+    }
+
+    .star {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background-color: #fff;
+      animation: twinkle 2s linear infinite;
+    }
+
+    @keyframes twinkle {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="main">
+    <h1>Under Maintenance</h1>
+    <p>We are currently performing maintenance. Please check back later.</p>
+    <p id="maintenance-message"></p>
+
+    <script>
+      const container = document.querySelector('.main');
+      const maintenanceMessageElement = document.getElementById('maintenance-message');
+
+      function createStar() {
+        const star = document.createElement('div');
+        star.classList.add('star');
+
+        const size = Math.random() * 2 + 1;
+        star.style.width = `${size}px`;
+        star.style.height = `${size}px`;
+
+        const x = Math.random() * 100;
+        const y = Math.random() * 100;
+        star.style.left = `${x}%`;
+        star.style.top = `${y}%`;
+
+        container.appendChild(star);
+
+        setTimeout(() => {
+          star.remove();
+          createStar();
+        }, Math.random() * 2000);
+      }
+
+      // Fetch maintenance message from API
+      fetch('http://localhost:8000/api/hello/')
+        .then(response => response.json())
+        .then(data => {
+          maintenanceMessageElement.textContent = data.message;
+        })
+        .catch(error => {
+          console.error('Error fetching data:', error);
+        });
+
+      // Create 100 stars
+      for (let i = 0; i < 100; i++) {
+        createStar();
+      }
+    </script>
+  </div>
+</body>
+</html>

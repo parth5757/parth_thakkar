@@ -6,15 +6,20 @@ import './App.css';
 
 function App() {
   const [message, setMessage] = useState('');
-  useEffect(() => {
+  const [timeRemaining, setTimeRemaining] = useState('');
 
-    axios.get('http://localhost:8000/api/hello/')
-    .then(response => {
-      setMessage(response.data.message);
-    })
-    .catch(error => {
+  useEffect(() => {
+    // Fetch maintenance message and remaining time
+    Promise.all([
+      axios.get('http://127.0.0.1:8000/api/hello/'),
+      axios.get('http://127.0.0.1:8000/api/time/'),
+    ]).then(([messageResponse, timeResponse]) => {
+      setMessage(messageResponse.data.message);
+      setTimeRemaining(timeResponse.data.time_remaining);
+    }).catch(error => {
       console.error('Error fetching data:', error);
     });
+    
 
     // JavaScript code for creating stars
     const container = document.querySelector('.main');
@@ -50,12 +55,14 @@ function App() {
   }, []); // Empty dependency array to run the effect once on component mountm
 
   return (
-    <div className="main">
-      <h1>Under Maintenance</h1>
+    <div className="main">     
+      <h1>Under Maintenance Till</h1>
+      <p class="time-remaining"><span id="remainingTime">{timeRemaining}</span></p>
       <p>We are currently performing maintenance. Please check back later.</p>
       <p>{message}</p>
 
       {/* Add the Sun Component here */}
+
 
       {/* <Sun /> */}
     </div>

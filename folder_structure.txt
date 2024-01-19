@@ -1,0 +1,54 @@
+Selected folder: D:/python/black_coffer/frontend/src
+App.css
+App.js
+App.test.js
+[components]
+  [chart]
+    chart.jsx
+    chart.scss
+  [datatables]
+    Datatable.jsx
+    datatable.scss
+  [featured]
+    featured.jsx
+    featured.scss
+  [navbar]
+    navbar.jsx
+    navbar.scss
+  [sidebar]
+    sidebar.jsx
+    sidebar.scss
+  [table]
+    Table.jsx
+    table.scss
+  [widget]
+    widget.jsx
+    widget.scss
+datatablessource.js
+formSource.js
+index.css
+index.js
+logo.svg
+[pages]
+  [home]
+    home.jsx
+    home.scss
+  [list]
+    list.jsx
+    list.scss
+  [login]
+    login.jsx
+    login.scss
+  [New]
+    New.jsx
+    new.scss
+  [register]
+    register.jsx
+    register.scss
+  [single]
+    single.jsx
+    single.scss
+reportWebVitals.js
+setupTests.js
+[style]
+  dark.scss
