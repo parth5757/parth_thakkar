@@ -20,7 +20,7 @@ def stop_watch(request):
     current_time = datetime.now()
 
     # Set target date as January 1st, 2024
-    target_date = datetime(2024, 1, 1)
+    target_date = datetime(2024, 3, 1)
 
     # Calculate time remaining until target date
     time_remaining = target_date - current_time
