@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 // import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import axios from 'axios';
 import './App.css';
+import NavScrollExample from './components/Navbar';
 // import Sun from './components/Sun'
 
 function App() {
@@ -55,12 +56,16 @@ function App() {
   }, []); // Empty dependency array to run the effect once on component mountm
 
   return (
-    <div className="main">     
-      <h1>Under Maintenance Till</h1>
-      <p class="time-remaining"><span id="remainingTime">{timeRemaining}</span></p>
-      <p>We are currently performing maintenance. Please check back later.</p>
-      <p>{message}</p>
+    <div className="main">
+      <NavScrollExample />   
+      <div className="center">
+        <h1>Under Maintenance Till</h1>
+        <p class="time-remaining"><span id="remainingTime">{timeRemaining}</span></p>
+        <p>We are currently performing maintenance. Please check back later.</p>
+        <p>{message}</p>
+      </div>
 
+      p
       {/* Add the Sun Component here */}
 
 

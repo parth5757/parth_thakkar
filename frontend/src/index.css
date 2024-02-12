@@ -12,7 +12,17 @@ code {
     monospace;
 }
 
-.main {
+.main{
+  /* flex-direction: row; */
+  background: linear-gradient(
+    to bottom,
+    #0a0a2a,
+    #000000 50%,
+    #04091e
+  );
+}
+.center {
+  flex-direction: row;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -25,7 +35,7 @@ code {
     #000000 50%,
     #04091e
   );
-  overflow: hidden; /* Hide stars that are outside the container */
+  /* overflow: hidden; /* Hide stars that are outside the container */
 }
 
 /* Create star-like elements */

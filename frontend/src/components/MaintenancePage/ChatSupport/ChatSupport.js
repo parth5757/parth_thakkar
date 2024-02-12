@@ -46,6 +46,7 @@ class ChatSupport extends Component {
             onChange={this.handleInputChange}
             className="chat-input"
           />
+          
           <button type="submit" className="send-button">
             Send
           </button>
