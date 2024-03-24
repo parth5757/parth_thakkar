@@ -65,7 +65,7 @@ function App() {
         <p>{message}</p>
       </div>
 
-      p
+      
       {/* Add the Sun Component here */}
 
 
